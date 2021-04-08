@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,500;1,200;1,300;1,400&display=swap');
+
+
+:root{
+    --primaryblue: rgb(5, 39, 71);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-family:"poppins",sans-serif;
+    font-size:10px
+}
+ 
+a{
+    text-decoration:none;
+}
+
+.container{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* hero section */
+.hero{
+    background-image: url(img1.jpg);
+    position:relative;
+    background-size: cover;
+    background-position: top center;
+    z-index:1;
+    font-family:"poppins",sans-serif;
+}
+
+
+.hero::after{
+    /* overlay */
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: rgb(0, 255, 221);
+    opacity:.3;
+    z-index:-1;
+}
+
+.hero h1{
+    display:block;
+    width:fit-content;
+    font-size: 64px;
+    color:transparent;
+    position:relative;
+    animation:text_reveal 1s ease forwards;
+}
+
+
+.hero h1 span{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width: 0%;
+    border-radius:20px;
+    background-color:rgba(30, 200, 121, 0.692);
+    animation:text_reveal_box 2s ease;
+    animation-delay:1s;
+}
+
+
+.hero a{
+    display:inline-block;
+    padding:10px 25px;
+    color:var(--primaryblue);
+    border:2px solid var(--primaryblue);
+    border-radius:1px;
+    font-size:22px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-top:25px;
+    transition:.5s ease;
+
+}
+
+
+.hero a:hover{
+    color:white;
+    background-color:rgb(23, 154, 158);
+}
+
+
+.hero .name{
+   background-color:var(--primaryblue);
+   border-radius: 5px;
+   padding:5px 15px;
+
+}
+
+
+
+/* end of hero section */
+
+/* Notes section */
+.notes{
+    font-family: 'Roboto Mono';
+
+
+}
+.notes .notes{
+    flex-direction:column;
+    text-align: center;
+    max-width: 1500px;
+    margin:0 auto;
+    padding:100px 0;
+}
+
+.notes .title{
+    font-size:4rem;
+    font-weight: 500;
+
+}
+/* End of section */
+.notes .notes-top{
+    font-size:1.4rem;
+    margin-top:10px;
+    line-height:2.5rem;
+    font-weight: 500;
+    letter-spacing: .05rem;
+}
+
+
+.notes .notes-bottom{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap:wrap;
+
+}
+
+.notes .notes-item{
+    flex-basis:80%;
+    height: 300px;
+    display:flex;
+    align-items: flex-start;
+    justify-content:center;
+    flex-direction:column;
+    padding:30px 12px;
+    border-radius:10px;
+    background-image: url(img4.jpg);
+    background-size:cover;
+    margin:10px 5%;
+}
+/* Key frame animation */
+@keyframes text_reveal_box{
+    50%{
+        width:100%;
+        left:0;
+    }
+    100%{
+        width:0;
+        left:100%;
+    }
+}
+
+
+@keyframes text_reveal{
+    100%{
+        color:white;
+    }
+}
+/* Key frame end */
